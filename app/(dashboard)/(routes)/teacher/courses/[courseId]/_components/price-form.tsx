@@ -64,14 +64,14 @@ export const PriceForm = ({
   return (
     <div className="mt-6 border bg-slate-100 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Course price
+        Valor do curso
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing ? (
-            <>Cancel</>
+            <>Cancelar</>
           ) : (
             <>
               <Pencil className="h-4 w-4 mr-2" />
-              Edit price
+              Editar Preço
             </>
           )}
         </Button>
@@ -83,7 +83,7 @@ export const PriceForm = ({
         )}>
           {initialData.price
             ? formatPrice(initialData.price)
-            : "No price"
+            : "Sem preço"
           }
         </p>
       )}
@@ -103,7 +103,7 @@ export const PriceForm = ({
                       type="number"
                       step="0.01"
                       disabled={isSubmitting}
-                      placeholder="Set a price for your course"
+                      placeholder="Informe o preço de venda do seu curso"
                       {...field}
                     />
                   </FormControl>
@@ -116,7 +116,7 @@ export const PriceForm = ({
                 disabled={!isValid || isSubmitting}
                 type="submit"
               >
-                Save
+                Salvar
               </Button>
             </div>
           </form>

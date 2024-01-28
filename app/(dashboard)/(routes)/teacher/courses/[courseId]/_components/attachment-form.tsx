@@ -35,11 +35,11 @@ export const AttachmentForm = ({
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await axios.post(`/api/courses/${courseId}/attachments`, values);
-      toast.success("Course updated");
+      toast.success("Upload enviado com sucesso");
       toggleEdit();
       router.refresh();
     } catch {
-      toast.error("Something went wrong");
+      toast.error("Erro ao fazer o upload");
     }
   };
 
@@ -47,10 +47,10 @@ export const AttachmentForm = ({
     try {
       setDeletingId(id);
       await axios.delete(`/api/courses/${courseId}/attachments/${id}`);
-      toast.success("Attachment deleted");
+      toast.success("Anexado com sucesso");
       router.refresh();
     } catch {
-      toast.error("Something went wrong");
+      toast.error("Erro ao anexar");
     } finally {
       setDeletingId(null);
     }
@@ -59,15 +59,15 @@ export const AttachmentForm = ({
   return (
     <div className="mt-6 border bg-slate-100 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Course attachments
+        Anexos
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && (
-            <>Cancel</>
+            <>Cancelar</>
           )}
           {!isEditing && (
             <>
               <PlusCircle className="h-4 w-4 mr-2" />
-              Add a file
+              Add arquivo
             </>
           )}
         </Button>
@@ -76,7 +76,7 @@ export const AttachmentForm = ({
         <>
           {initialData.attachments.length === 0 && (
             <p className="text-sm mt-2 text-slate-500 italic">
-              No attachments yet
+              Sem anexos
             </p>
           )}
           {initialData.attachments.length > 0 && (
@@ -120,7 +120,7 @@ export const AttachmentForm = ({
             }}
           />
           <div className="text-xs text-muted-foreground mt-4">
-            Add anything your students might need to complete the course.
+          Adicione tudo o que seus alunos possam precisar para concluir o capítulo.
           </div>
         </div>
       )}

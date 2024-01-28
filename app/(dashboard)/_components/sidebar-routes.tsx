@@ -13,7 +13,7 @@ const guestRoutes = [
   },
   {
     icon: Compass,
-    label: "Browse",
+    label: "Encontre aqui!",
     href: "/search",
   },
 ];
@@ -21,7 +21,7 @@ const guestRoutes = [
 const teacherRoutes = [
   {
     icon: List,
-    label: "Courses",
+    label: "Cursos",
     href: "/teacher/courses",
   },
   {

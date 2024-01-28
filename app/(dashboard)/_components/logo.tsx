@@ -5,8 +5,8 @@ export const Logo = () => {
     <Image
       height={130}
       width={130}
-      alt="logo"
-      src="/logo.svg"
+      alt="logo085"
+      src="/logo085.png"
     />
   )
 }
